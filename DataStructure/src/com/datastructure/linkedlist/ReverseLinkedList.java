@@ -2,6 +2,11 @@ package com.datastructure.linkedlist;
 
 import java.util.Iterator;
 
+/**
+ * Singly-linked list 
+ *
+ * @param <T>
+ */
 public class ReverseLinkedList <T> implements Iterable<T>{
 	
 	  private int size = 0;
@@ -23,35 +28,59 @@ public class ReverseLinkedList <T> implements Iterable<T>{
 	  }
 	  
 
-	  public void add(T data) {
+	 /**
+	 * Method to add elements to the linked list
+	 * @param data
+	 */
+	public void add(T data) {
 		  add(head, data);
 	  }
 	  
-	  private void add(Node node, T data) {
-		  
+	 /**
+	 * This Method is called internally  to add elements to the linked list
+	 * @param node
+	 * @param data
+	 */
+	private void add(Node node, T data) {
+		  // if the head is null, then adding the data to head
 		  if (head == null) {
 			  head =  new Node(null, data);
 		  }else {
 			  Node lastNode = head;
+			  //looping through the elements to find the last node
 			  while(lastNode.next != null) {
 				  lastNode =  lastNode.next;
 			  }
+			  //once the last node is found adding the data to the node
 			  lastNode.next = new Node(null,data);
 		  }
 	  }
 	
+	/**
+	 * This method is used to reverse the linked list
+	 */
 	public void reverseList() {
 		Node prev = null;
+		// assigning current node to head
 		Node curr = head;
+		//checking if current node is not null
         while (curr != null){
+        	// fetching node next to current node 
             Node nextTmp = curr.next;
+            //making current to point to previous node
             curr.next = prev;
+            // assigning prev node to current node
             prev = curr;
+            // moving the current node pointer to its next node
             curr = nextTmp;
         }
+        //assigning the last to head
         head= prev;
 	}
 	
+	/**
+	 *To print the linked list
+	 */
 	@Override
 	public String toString() {
 		StringBuffer strBf = new StringBuffer();

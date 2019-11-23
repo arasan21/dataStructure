@@ -3,10 +3,19 @@ package com.datastructure.array;
 import java.util.Arrays;
 import java.util.HashSet;
 
+/**
+ * @author Poovarasan
+ *
+ */
 public class SingleNumber {
 	
 	//only for every element appears n times 
-	public int singleNumber(int[] intArray) {
+	/**
+	 * @param intArray
+	 * @param n
+	 * @return
+	 */
+	public int singleNumber(int[] intArray, int n) {
 		int array_sum=0, set_sum=0;
 		HashSet<Integer> hashSet = new HashSet<Integer>();
 		for (int i : intArray ) {
@@ -17,10 +26,14 @@ public class SingleNumber {
 		array_sum =Arrays.stream(intArray)
 						 .reduce(0,Integer::sum);
 		//(n times * sum of unique no's - sum of all no's)/(n times-1)
-		return (int)Math.ceil((3*set_sum - array_sum)/(double)(3-1));
+		return (int)Math.ceil((n*set_sum - array_sum)/(double)(n-1));
 	}
 	
 	//only for every element appears twice 
+	/**
+	 * @param nums
+	 * @return
+	 */
 	public int singleNumberTwice(int[] nums) {
 		int a = 0;
 		        for (int i : nums) {
@@ -35,7 +48,7 @@ public class SingleNumber {
 		 int b[] = {2,2,1};
 		 SingleNumber singleNumber = new SingleNumber();
 	     System.out.println("The element with single " +  
-	                        "occurrence is :" + singleNumber.singleNumber(a)); 
+	                        "occurrence is :" + singleNumber.singleNumber(a, 3)); 
 	     System.out.println("The element with single " +  
                  "occurrence is :" + singleNumber.singleNumberTwice(b));
 	}
