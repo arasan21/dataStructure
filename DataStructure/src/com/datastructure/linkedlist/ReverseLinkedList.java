@@ -1,8 +1,6 @@
 package com.datastructure.linkedlist;
 
-import java.util.Arrays;
 import java.util.Iterator;
-import java.util.LinkedList;
 
 public class ReverseLinkedList <T> implements Iterable<T>{
 	
