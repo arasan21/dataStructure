@@ -4,16 +4,16 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 /**
- * @author Poovarasan
+ * Given a non-empty array of integers, every element appears n times except for one. Find that single one.
  *
  */
 public class SingleNumber {
 	
-	//only for every element appears n times 
 	/**
-	 * @param intArray
-	 * @param n
-	 * @return
+	 * This method returns the single element that appears one time only
+	 * @param intArray - integer array
+	 * @param n - number of times element appears except one element
+	 * @return single element that appears one time only
 	 */
 	public int singleNumber(int[] intArray, int n) {
 		int array_sum=0, set_sum=0;
@@ -31,15 +31,17 @@ public class SingleNumber {
 	
 	//only for every element appears twice 
 	/**
-	 * @param nums
-	 * @return
+	 * This is only for the pattern where each element appears twice except one
+	 * This method returns the single element that appears one time only.
+	 * @param nums - integer array
+	 * @return single element that appears one time only
 	 */
 	public int singleNumberTwice(int[] nums) {
 		int a = 0;
-		        for (int i : nums) {
-		            a ^= i;
-		        }
-		        return a;
+        for (int i : nums) {
+            a ^= i;
+        }
+        return a;
 	}
 	
 	public static void main(String[] args) {

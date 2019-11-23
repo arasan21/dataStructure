@@ -5,7 +5,6 @@ import java.util.Iterator;
 /**
  * Singly-linked list 
  *
- * @param <T>
  */
 public class ReverseLinkedList <T> implements Iterable<T>{
 	
