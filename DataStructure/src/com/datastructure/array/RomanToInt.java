@@ -13,6 +13,11 @@ package com.datastructure.array;
  */
 public class RomanToInt {
 	
+	/**
+	 * Method to convert each Roman letter to int
+	 * @param letter
+	 * @return int
+	 */
 	public static int valueRomanInt(char letter) {
 		if(letter == 'I') return 1;
 		else if(letter == 'V') return 5;
@@ -24,6 +29,11 @@ public class RomanToInt {
 		return -1;
 	}
 	
+	/**
+	 * Method to convert given roman number to int
+	 * @param romanStr
+	 * @return int
+	 */
 	public static int romantoInt(String romanStr) {
 		int result = 0;
 		for(int i=0; i <   romanStr.length(); i++) {
