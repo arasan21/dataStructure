@@ -11,7 +11,7 @@ import java.util.Arrays;
  *You must do this in-place without making a copy of the array.
  *Minimize the total number of operations.
  */
-public class moveZeroes {
+public class MoveZeroes {
 
 	 // Function which move all zeros to end of an array. 
 	 public static void moveZeroes(int[] nums) {

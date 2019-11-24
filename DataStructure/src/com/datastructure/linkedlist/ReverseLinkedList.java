@@ -28,7 +28,7 @@ public class ReverseLinkedList <T> implements Iterable<T>{
 	  
 
 	 /**
-	 * Method to add elements to the linked list
+	 * Method to add 0.elements to the linked list
 	 * @param data
 	 */
 	public void add(T data) {
