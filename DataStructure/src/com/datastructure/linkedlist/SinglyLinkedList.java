@@ -6,7 +6,7 @@ import java.util.Iterator;
  * Singly-linked list 
  *
  */
-public class ReverseLinkedList <T> implements Iterable<T>{
+public class SinglyLinkedList <T> implements Iterable<T>{
 	
 	  private int size = 0;
 	  private Node<T> head = null;
@@ -77,6 +77,21 @@ public class ReverseLinkedList <T> implements Iterable<T>{
         head= prev;
 	}
 	
+	public void delete(T data) {
+		Node curr =  head;
+		Node prev = null;
+		if( curr != null  && curr.data ==  data) {
+			head = curr.next;
+			return;
+		}
+		while(curr != null  && curr.data !=  data) {
+			prev = curr;
+			curr = curr.next;
+		}
+		if(curr == null) return;
+		prev.next = curr.next;
+	}
+	
 	/**
 	 *To print the linked list
 	 */
@@ -93,7 +108,7 @@ public class ReverseLinkedList <T> implements Iterable<T>{
         
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ReverseLinkedList intLinkedList = new ReverseLinkedList();
+		SinglyLinkedList intLinkedList = new SinglyLinkedList();
 		intLinkedList.add(1);
 		intLinkedList.add(2);
 		intLinkedList.add(3);
@@ -101,6 +116,8 @@ public class ReverseLinkedList <T> implements Iterable<T>{
 		System.out.println("Before reverse: "+intLinkedList.toString());
 		intLinkedList.reverseList();
 		System.out.println("After reverse: "+intLinkedList.toString());
+		intLinkedList.delete(2);
+		System.out.println("After delete: "+intLinkedList.toString());
 	}
 
 	@Override
